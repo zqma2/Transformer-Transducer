@@ -1,8 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from tt.encoder import build_encoder
-from tt.decoder import build_decoder
+from rnnt.encoder import BuildEncoder
+from rnnt.encoder import build_encoder
+from rnnt.decoder import build_decoder
 from warprnnt_pytorch import RNNTLoss
 
 
@@ -11,7 +12,6 @@ class JointNet(nn.Module):
         super(JointNet, self).__init__()
 
         self.forward_layer = nn.Linear(input_size, inner_dim, bias=True)
-
         self.tanh = nn.Tanh()
         self.project_layer = nn.Linear(inner_dim, vocab_size, bias=True)
 
@@ -42,7 +42,8 @@ class Transducer(nn.Module):
         super(Transducer, self).__init__()
         # define encoder
         self.config = config
-        self.encoder = build_encoder(config)
+        self.encoder = BuildEncoder(config)
+        # self.encoder = build_encoder(config)
         # define decoder
         self.decoder = build_decoder(config)
         # define JointNet
@@ -108,7 +109,7 @@ class Transducer(nn.Module):
             decoded_seq = decode(enc_states[i], inputs_length[i])
             results.append(decoded_seq)
 
-        with open('decode.txt', 'a') as fid:
+        with open('decode.txt', 'w') as fid:
             for line in results:
                 fid.write(str(line)+'\n')
 
