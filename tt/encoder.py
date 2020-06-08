@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from rnnt.transformer import RelLearnableDecoderLayer
+from tt.transformer import RelLearnableDecoderLayer
 
 
 class BaseEncoder(nn.Module):
