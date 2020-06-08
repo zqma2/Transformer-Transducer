@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from rnnt.encoder import BuildEncoder
-from rnnt.encoder import build_encoder
-from rnnt.decoder import build_decoder
+from tt.encoder import BuildEncoder
+from tt.encoder import build_encoder
+from tt.decoder import build_decoder
 from warprnnt_pytorch import RNNTLoss
 
 
