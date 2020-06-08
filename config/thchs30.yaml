@@ -8,8 +8,8 @@ data:
     right_context_width: 0
     frame_rate: 30
     apply_cmvn: False
-    max_input_length: 2000
-    max_target_length: 200
+    max_input_length: 521
+    max_target_length: 94
     batch_size: 3
     short_first: True
     shuffle: False
@@ -32,14 +32,14 @@ model:
         hidden_size:
         output_size:
         d_inner: 320
-        n_head: 4
-        d_model: 212
-        d_head: 53
+        n_head: 3
+        d_model: 213
+        d_head: 71
         n_layer: 1
     joint:
-        input_size: 372
-        inner_size: 320
-    vocab_size: 212
+        input_size: 373
+        inner_size: 512
+    vocab_size: 213
     share_weight: False
     feature_dim:
     dropout: 0.1
