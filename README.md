@@ -1,6 +1,7 @@
 # Update
-* add `sequence mask` in decoder
-* add `nlayer` in encoder
+|Dataset | Acoustic Feature | Word Embedding | PER(dev)| 
+|--|--|--|--|
+|thchs30 |  fbank dim = 40  |    one-hot     |  17.54% |
 
 # Introduction
 This directory contains a `pytorch` implementation of 
@@ -9,7 +10,7 @@ This directory contains a `pytorch` implementation of
 which is pre-printed on arXiv in Feb. 2020 from Google. It shows that Transformer Transducer model achieved state-of-the-art results in streaming speech recognition.
 
 # Features
-Transformer Transducer (T-T) is a combination of Transformer and RNN-T, which employs self-attention [1] to encode both acoustic features and word embeddings respectively instead of LSTM in RNN Transducer. Not only T-T uses the Relative Positional Encoding, which is mentioned in transformer-xl [2], but also Loss Function [3] and Joint Network 4] proposed by Alex Graves in 2012 and 2013 respectively. 
+Transformer Transducer (T-T) is a combination of Transformer and RNN-T, which employs self-attention [1] to encode both acoustic features and word embeddings respectively instead of LSTM in RNN Transducer. Not only T-T uses the Relative Positional Encoding, which is mentioned in transformer-xl [2], but also Loss Function [3] and Joint Network [4] proposed by Alex Graves in 2012 and 2013 respectively. 
 
 # Environment
 * [Kaldi](https://github.com/kaldi-asr/kaldi)  
